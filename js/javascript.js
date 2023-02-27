@@ -17,7 +17,23 @@ tabuleiro_marc.forEach((tabuleiro)=>{
                 c++
                },"100")
             }
-           
+            if (c==1){
+                jogador1_select11 = false
+                jogador2_select22 = true
+                valor_jogador.push(tabuleiro.getAttribute("data-tab"))
+                setTimeout(()=>{
+                    c--
+                   },"100")
+                
+            }
+            if (jogador1_select11 == true){
+                tabuleiro.innerHTML += jogador1}
+            if (jogador2_select22 == true){
+                tabuleiro.innerHTML += jogador2
+            }
+            for(contador =0; c < 9; c++){
+                escreva(tabuleiro[c]+" ")
+            }
         }
         
     })
