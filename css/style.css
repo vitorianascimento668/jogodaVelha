@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:rgb(24, 24, 44);
+    font-size:20px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+h1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.tabuleiro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabuleiro_marc{
+    text-transform: uppercase;
+    color: #bd1190bd;
+    font-size:60px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 100px;
+    border-bottom: 1px solid #aba8af2e;
+    border-right: 1px solid #aba8af2e;
+}
+.tabuleiro_marc:hover{
+    background-color: rgb(147 145 145 / 19%);
+    cursor:pointer;
+}
+.botao_comum{
+    width: 200px;
+    background-color: #43436078;
+    height: 30px;
+    
+    margin-bottom: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #80808059;}
+
+
+.resultado_jogador{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin:30px;
+    text-transform: uppercase;
+
+}
+.botoes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.mar8, .mar9, .mar7{
+    border-right: 1px solid transparent;
+}
+.mar6, .mar3, .mar9{
+    border-bottom: 1px solid transparent;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>JOGO DA VELHA</h1>
+        <div class="tabuleiro">
+            <div class="tabuleiro_div">
+                <div class="tabuleiro_marc mar1">X</div>
+                <div class="tabuleiro_marc mar2"></div>
+                <div class="tabuleiro_marc mar3"></div>
+            </div>
+            <div class="tabuleiro_div">
+                <div class="tabuleiro_marc mar4"></div>
+                <div class="tabuleiro_marc mar5"></div>
+                <div class="tabuleiro_marc mar6"></div>
+            </div>
+            <div class="tabuleiro_div">
+                <div class="tabuleiro_marc mar7">o</div>
+                <div class="tabuleiro_marc mar8"></div>
+                <div class="tabuleiro_marc mar9"></div>
+            </div>
+        </div>
+        <div class="resultado_jogador">EMPATE!!</div>
+        <div class="botoes">
+            <div class="novo_jogo botao_comum" onclick="novoJogo()">NOVO JOGO</div>
+            <div class="placar botao_comum" onclick="placar()"> PLACAR</div>
+            <div class="zerarPlacar botao_comum">ZERAR PLACAR</div>
+        </div>
+    </div>
+    <script src="./js/javascript.js"></script>
+    
+</body>
+</html>
