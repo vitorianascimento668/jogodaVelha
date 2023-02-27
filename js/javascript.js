@@ -1,6 +1,6 @@
 let jogador1 = 'X'
 let jogador2 = 'O'
-let jogador1_select11 , jogador2_select22
+let jogador1_select11 , jogador2_select22, vezes_jogada = 0
 let valor_jogador1 = [],valor_jogador2 = [], valor, contador , jogador1_ganhou =0,jogador2_ganhou=0
 let tabuleiro_marc = document.querySelectorAll('.tabuleiro_marc')
 let ganhouEmpate = document.querySelector(".resultado_jogador")
@@ -38,20 +38,35 @@ tabuleiro_marc.forEach((tabuleiro)=>{
     })
 })
 function jogo(){
-    if (valor_jogador1[0] == "1" && valor_jogador1[1] == "2"  && valor_jogador1[2] == "3" || valor_jogador2[0] == "1" && valor_jogador2[1] == "2"  && valor_jogador2[2] == "3"){
-        if(valor_jogador1[0] == "1" && valor_jogador1[1] == "2"  && valor_jogador1[2] == "3"){
+    //LATERALMENTE
+    if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[1].innerHTML == "X"  && tabuleiro_marc[2].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[1].innerHTML == "O"  && tabuleiro_marc[2].innerHTML == "O")){
+        if(tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[1].innerHTML == "X"  && tabuleiro_marc[2].innerHTML == "X"){
             jogador1_ganhou ++
-        }else{
+        }else{ 
             jogador2_ganhou++
         }
             ganhou()
     }
-    if (valor_jogador1[0] == "1" && valor_jogador1[1] == "4"  && valor_jogador1[2] == "7" || valor_jogador2[0] == "1" && valor_jogador2[1] == "4"  && valor_jogador2[2] == "7"){
-        ganhou()
+    // EM CIMA / RETO
+    if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[3].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[3].innerHTML == "O"  && tabuleiro_marc[6].innerHTML == "O")){
+        if(tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[3].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X"){
+            jogador1_ganhou ++
+        }else{ 
+            jogador2_ganhou++
+        }
+            ganhou()
+    } // TRANSVERSAL
+    if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[8].innerHTML == "O")){
+        if(tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X"){
+            jogador1_ganhou ++
+        }else{ 
+            jogador2_ganhou++
+        }
+            ganhou()
     }
-    if (valor_jogador1[0] == "1" && valor_jogador1[1] == "4"  && valor_jogador1[2] == "7" || valor_jogador2[0] == "1" && valor_jogador2[1] == "4"  && valor_jogador2[2] == "7"){
-        ganhou()
-    }
+
+    
+    
 
 }
 function ganhou(){
