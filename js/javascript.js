@@ -1,8 +1,9 @@
 let jogador1 = 'X'
 let jogador2 = 'O'
 let jogador1_select11 , jogador2_select22
-let valor_jogador1 = [],valor_jogador2 = [], valor, contador
+let valor_jogador1 = [],valor_jogador2 = [], valor, contador , jogador1_ganhou =0,jogador2_ganhou=0
 let tabuleiro_marc = document.querySelectorAll('.tabuleiro_marc')
+let ganhouEmpate = document.querySelector(".resultado_jogador")
 let c = 0
 
 tabuleiro_marc.forEach((tabuleiro)=>{
@@ -38,9 +39,28 @@ tabuleiro_marc.forEach((tabuleiro)=>{
 })
 function jogo(){
     if (valor_jogador1[0] == "1" && valor_jogador1[1] == "2"  && valor_jogador1[2] == "3" || valor_jogador2[0] == "1" && valor_jogador2[1] == "2"  && valor_jogador2[2] == "3"){
-            alert("sim")
+        if(valor_jogador1[0] == "1" && valor_jogador1[1] == "2"  && valor_jogador1[2] == "3"){
+            jogador1_ganhou ++
+        }else{
+            jogador2_ganhou++
+        }
+            ganhou()
+    }
+    if (valor_jogador1[0] == "1" && valor_jogador1[1] == "4"  && valor_jogador1[2] == "7" || valor_jogador2[0] == "1" && valor_jogador2[1] == "4"  && valor_jogador2[2] == "7"){
+        ganhou()
+    }
+    if (valor_jogador1[0] == "1" && valor_jogador1[1] == "4"  && valor_jogador1[2] == "7" || valor_jogador2[0] == "1" && valor_jogador2[1] == "4"  && valor_jogador2[2] == "7"){
+        ganhou()
     }
 
+}
+function ganhou(){
+        if (jogador1_ganhou > 0){
+            ganhouEmpate.innerHTML = `JOGADOR 1 GANHOU `
+        }
+        if (jogador2_ganhou > 0){
+            ganhouEmpate.innerHTML = `JOGADOR 2 GANHOU `
+        }
 }
 
 /*
