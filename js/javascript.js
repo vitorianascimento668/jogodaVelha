@@ -1,7 +1,7 @@
 let jogador1 = 'X'
 let jogador2 = 'O'
 let jogador1_select11 , jogador2_select22
-let valor_jogador = [], valor, contador
+let valor_jogador1 = [],valor_jogador2 = [], valor, contador
 let tabuleiro_marc = document.querySelectorAll('.tabuleiro_marc')
 let c = 0
 
@@ -11,7 +11,7 @@ tabuleiro_marc.forEach((tabuleiro)=>{
             if (c==0){
                 jogador1_select11 = true
                 jogador2_select22 = false
-                valor_jogador.push(tabuleiro.getAttribute("data-tab"))
+                valor_jogador1.push(tabuleiro.getAttribute("data-tab"))
     
                setTimeout(()=>{
                 c++
@@ -20,7 +20,7 @@ tabuleiro_marc.forEach((tabuleiro)=>{
             if (c==1){
                 jogador1_select11 = false
                 jogador2_select22 = true
-                valor_jogador.push(tabuleiro.getAttribute("data-tab"))
+                valor_jogador2.push(tabuleiro.getAttribute("data-tab"))
                 setTimeout(()=>{
                     c--
                    },"100")
@@ -31,15 +31,16 @@ tabuleiro_marc.forEach((tabuleiro)=>{
             if (jogador2_select22 == true){
                 tabuleiro.innerHTML += jogador2
             }
-            for(contador =0; c < 9; c++){
-                escreva(tabuleiro[c]+" ")
-            }
+            jogo()
         }
         
     })
 })
 function jogo(){
-    
+    if (valor_jogador1[0] == "1" && valor_jogador1[1] == "2"  && valor_jogador1[2] == "3" || valor_jogador2[0] == "1" && valor_jogador2[1] == "2"  && valor_jogador2[2] == "3"){
+            alert("sim")
+    }
+
 }
 
 /*
