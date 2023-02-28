@@ -1,7 +1,7 @@
 let jogador1 = 'X'
 let jogador2 = 'O'
-let jogador1_select11 = "" , jogador2_select22, vezes_jogada = 0
-let c = 0
+let jogador1_select11 = "", jogador2_select22 ,vezes_jogada = 0
+let c = 0, v_ganhada1, v_ganhada2 , tamanho_tabuleiro = ""
 let valor_jogador1 = [],valor_jogador2 = [], valor, contador , jogador1_ganhou =0,jogador2_ganhou=0
 let tabuleiro_marc = document.querySelectorAll('.tabuleiro_marc')
 let ganhouEmpate = document.querySelector(".resultado_jogador")
@@ -120,40 +120,49 @@ function jogo(){
     empate()
 }
 function novoJogo(){
-    novoJ.addEventListener("click",()=>{
         for (let con = 0 ; con < tabuleiro_marc.length ; con++){
             tabuleiro_marc[con].innerHTML = ""
             jogador1_select11 = "", jogador2_select22 = ''
             ganhouEmpate.innerHTML = "JOGUE!!"
-            c = 0
-        }
-    })
-    
+            c = 0,  tamanho_tabuleiro = ""
+            jogador1_ganhou = 0 , jogador2_ganhou = 0
+        } 
 }
+
 function empate(){
     for (let s =0 ; s < tabuleiro_marc.length; s++){
         if(tabuleiro_marc[s].innerHTML.length > 0){
-            jogador1_select11++
+            tamanho_tabuleiro++
         }
     }
-    if(jogador1_select11 == 10 && ganhouEmpate.innerHTML == "JOGUE!!"){
+    if(tamanho_tabuleiro == 45 && ganhouEmpate.innerHTML == "JOGUE!!"){
         ganhouEmpate.innerHTML = `EMPATEEE !! `
-        terminouJogo()
+        setTimeout (()=>{
+            novoJogo()
+        },"1000")
     }
 }
+
 function ganhou(){
-        jogador1_select11 = false
+        
         if (jogador1_ganhou > 0){
             ganhouEmpate.innerHTML = `JOGADOR 1 GANHOU `
-            terminouJogo()
+            alert('TERMINOU O JOGO, O JOGADOR 1 GANHOU ')
+            setTimeout (()=>{
+                novoJogo()
+            },"1000")
         }
         if (jogador2_ganhou > 0){
             ganhouEmpate.innerHTML = `JOGADOR 2 GANHOU `
-            terminouJogo()
+            alert('TERMINOU O JOGO, O  O JOGADOR 2 GANHOU' )
+            setTimeout (()=>{
+                novoJogo()
+            },"1000")
         }
 }
-function terminouJogo(){
-       
-}
+function placar(){
 
-novoJogo()
+}
+function zerar(){
+    
+}
