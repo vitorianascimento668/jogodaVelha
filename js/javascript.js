@@ -70,10 +70,38 @@ function jogo(){
         }else{ 
             jogador2_ganhou++
         }
+        
             ganhou()
-    } // TRANSVERSAL
+    }
+    if ((tabuleiro_marc[1].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[7].innerHTML == "X") || (tabuleiro_marc[1].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[7].innerHTML == "O")){
+        if(tabuleiro_marc[1].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[7].innerHTML == "X"){
+            jogador1_ganhou ++
+        }else{ 
+            jogador2_ganhou++
+        }
+        
+            ganhou()
+    }
+    if ((tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[5].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X") || (tabuleiro_marc[2].innerHTML == "O" && tabuleiro_marc[5].innerHTML == "O"  && tabuleiro_marc[8].innerHTML == "O")){
+        if(tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[5].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X"){
+            jogador1_ganhou ++
+        }else{ 
+            jogador2_ganhou++
+        }
+        
+            ganhou()
+    }
+    // TRANSVERSAL
     if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[8].innerHTML == "O")){
         if(tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X"){
+            jogador1_ganhou ++
+        }else{ 
+            jogador2_ganhou++
+        }
+            ganhou()
+    }
+    if ((tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X") || (tabuleiro_marc[2].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[6].innerHTML == "O")){
+        if(tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X"){
             jogador1_ganhou ++
         }else{ 
             jogador2_ganhou++
