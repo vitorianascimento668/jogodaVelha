@@ -74,10 +74,11 @@ h1{
     border-bottom: 1px solid transparent;
 }
 .placar{
+    text-align: center;
     padding-left:30px;
     padding-bottom:30px;
 }
-.jogador_1{
+.jogador_1, .jogador_2{
     display: inline;
     color:grey;
 }
