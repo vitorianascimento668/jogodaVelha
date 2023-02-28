@@ -1,11 +1,11 @@
 let jogador1 = 'X'
 let jogador2 = 'O'
-let jogador1_select11 , jogador2_select22, vezes_jogada = 0
+let jogador1_select11 = "" , jogador2_select22, vezes_jogada = 0
+let c = 0
 let valor_jogador1 = [],valor_jogador2 = [], valor, contador , jogador1_ganhou =0,jogador2_ganhou=0
 let tabuleiro_marc = document.querySelectorAll('.tabuleiro_marc')
 let ganhouEmpate = document.querySelector(".resultado_jogador")
 let novoJ = document.querySelector(".novo_jogo")
-let c = 0
 
 tabuleiro_marc.forEach((tabuleiro)=>{
     tabuleiro.addEventListener("click", ()=>{
@@ -42,11 +42,12 @@ function jogo(){
     //LATERALMENTE
     if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[1].innerHTML == "X"  && tabuleiro_marc[2].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[1].innerHTML == "O"  && tabuleiro_marc[2].innerHTML == "O")){
         if(tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[1].innerHTML == "X"  && tabuleiro_marc[2].innerHTML == "X"){
-            jogador1_ganhou ++
+            jogador1_ganhou ++            
         }else{ 
             jogador2_ganhou++
         }
             ganhou()
+           
     }
     if ((tabuleiro_marc[3].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[5].innerHTML == "X") || (tabuleiro_marc[3].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[5].innerHTML == "O")){
         if(tabuleiro_marc[3].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[5].innerHTML == "X"){
@@ -55,6 +56,7 @@ function jogo(){
             jogador2_ganhou++
         }
             ganhou()
+            
     }
     if ((tabuleiro_marc[6].innerHTML == "X" && tabuleiro_marc[7].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X") || (tabuleiro_marc[6].innerHTML == "O" && tabuleiro_marc[7].innerHTML == "O"  && tabuleiro_marc[8].innerHTML == "O")){
         if(tabuleiro_marc[6].innerHTML == "X" && tabuleiro_marc[7].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X"){
@@ -63,6 +65,7 @@ function jogo(){
             jogador2_ganhou++
         }
             ganhou()
+            
     }
     // EM CIMA / RETO
     if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[3].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[3].innerHTML == "O"  && tabuleiro_marc[6].innerHTML == "O")){
@@ -73,6 +76,7 @@ function jogo(){
         }
         
             ganhou()
+          
     }
     if ((tabuleiro_marc[1].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[7].innerHTML == "X") || (tabuleiro_marc[1].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[7].innerHTML == "O")){
         if(tabuleiro_marc[1].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[7].innerHTML == "X"){
@@ -82,7 +86,7 @@ function jogo(){
         }
         
             ganhou()
-    }
+    }       
     if ((tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[5].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X") || (tabuleiro_marc[2].innerHTML == "O" && tabuleiro_marc[5].innerHTML == "O"  && tabuleiro_marc[8].innerHTML == "O")){
         if(tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[5].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X"){
             jogador1_ganhou ++
@@ -91,7 +95,7 @@ function jogo(){
         }
         
             ganhou()
-    }
+    }        
     // TRANSVERSAL
     if ((tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X") || (tabuleiro_marc[0].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[8].innerHTML == "O")){
         if(tabuleiro_marc[0].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[8].innerHTML == "X"){
@@ -100,6 +104,7 @@ function jogo(){
             jogador2_ganhou++
         }
             ganhou()
+            
     }
     if ((tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X") || (tabuleiro_marc[2].innerHTML == "O" && tabuleiro_marc[4].innerHTML == "O"  && tabuleiro_marc[6].innerHTML == "O")){
         if(tabuleiro_marc[2].innerHTML == "X" && tabuleiro_marc[4].innerHTML == "X"  && tabuleiro_marc[6].innerHTML == "X"){
@@ -108,11 +113,11 @@ function jogo(){
             jogador2_ganhou++
         }
             ganhou()
+           
     }
-
-    
     
 
+    empate()
 }
 function novoJogo(){
     novoJ.addEventListener("click",()=>{
@@ -125,7 +130,19 @@ function novoJogo(){
     })
     
 }
+function empate(){
+    for (let s =0 ; s < tabuleiro_marc.length; s++){
+        if(tabuleiro_marc[s].innerHTML.length > 0){
+            jogador1_select11++
+        }
+    }
+    if(jogador1_select11 == 10 && ganhouEmpate.innerHTML == "JOGUE!!"){
+        ganhouEmpate.innerHTML = `EMPATEEE !! `
+        terminouJogo()
+    }
+}
 function ganhou(){
+        jogador1_select11 = false
         if (jogador1_ganhou > 0){
             ganhouEmpate.innerHTML = `JOGADOR 1 GANHOU `
             terminouJogo()
@@ -136,7 +153,7 @@ function ganhou(){
         }
 }
 function terminouJogo(){
-        
+       
 }
 
 novoJogo()
