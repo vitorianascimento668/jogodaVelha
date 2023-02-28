@@ -4,6 +4,7 @@ let jogador1_select11 , jogador2_select22, vezes_jogada = 0
 let valor_jogador1 = [],valor_jogador2 = [], valor, contador , jogador1_ganhou =0,jogador2_ganhou=0
 let tabuleiro_marc = document.querySelectorAll('.tabuleiro_marc')
 let ganhouEmpate = document.querySelector(".resultado_jogador")
+let novoJ = document.querySelector(".novo_jogo")
 let c = 0
 
 tabuleiro_marc.forEach((tabuleiro)=>{
@@ -113,24 +114,29 @@ function jogo(){
     
 
 }
+function novoJogo(){
+    novoJ.addEventListener("click",()=>{
+        for (let con = 0 ; con < tabuleiro_marc.length ; con++){
+            tabuleiro_marc[con].innerHTML = ""
+            jogador1_select11 = "", jogador2_select22 = ''
+            ganhouEmpate.innerHTML = "JOGUE!!"
+            c = 0
+        }
+    })
+    
+}
 function ganhou(){
         if (jogador1_ganhou > 0){
             ganhouEmpate.innerHTML = `JOGADOR 1 GANHOU `
+            terminouJogo()
         }
         if (jogador2_ganhou > 0){
             ganhouEmpate.innerHTML = `JOGADOR 2 GANHOU `
+            terminouJogo()
         }
 }
+function terminouJogo(){
+        
+}
 
-/*
-1-)verifica quem está jogando, jogador 1 ou jogador2
-2-)Atribuir o valor na tela e deixa-lo guardado em alguma var
-3-)
-4-) 
-5-)
-6-)
-7-)
-8-)
-9-)
-10-)
-*/
+novoJogo()
